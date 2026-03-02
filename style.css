@@ -4,6 +4,16 @@
     --text-color: #333;
     --container-bg: #ffffff;
     --shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    --btn-hover: #2980b9;
+}
+
+[data-theme="dark"] {
+    --primary-color: #5dade2;
+    --background-color: #1a1a1a;
+    --text-color: #f0f2f5;
+    --container-bg: #2d2d2d;
+    --shadow: 0 10px 20px rgba(0,0,0,0.5), 0 6px 6px rgba(0,0,0,0.6);
+    --btn-hover: #3498db;
 }
 
 body {
@@ -15,11 +25,29 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-image: linear-gradient(45deg, #f0f2f5 25%, transparent 25%),
-                      linear-gradient(-45deg, #f0f2f5 25%, transparent 25%),
-                      linear-gradient(45deg, transparent 75%, #f0f2f5 75%),
-                      linear-gradient(-45deg, transparent 75%, #f0f2f5 75%);
-    background-size: 20px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-toggle {
+    background: none;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: var(--primary-color);
+    color: white;
 }
 
 .container {
@@ -28,6 +56,7 @@ body {
     border-radius: 15px;
     box-shadow: var(--shadow);
     text-align: center;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 h1 {
